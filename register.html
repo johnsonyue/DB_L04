@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="twitter-bootstrap-v2/docs/assets/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .form-signin {
+            max-width:500px;
+            padding: 19px 29px 29px;
+            margin: 0 auto 20px;
+            background-color: #fff;
+            border: 1px solid #e5e5e5;
+        }
+
+        input{
+            width:300px;
+        }
+        button{
+            width:400px;
+        }
+        #head{
+            text-align:center;
+        }
+        table thead th h2{
+            margin-bottom:20px;
+        }
+        .wrapper{
+            margin:0px auto;
+            text-align:center;
+        }
+        .wrapper table{
+            margin:0px auto;
+        }
+    </style>
+</head>
+<body>
+<form class="form-signin" method="post" action="result.php">
+    <div class="wrapper">
+    <table>
+        <thead>
+            <th colspan="2"><h2>Register</h2></th>
+        </thead>
+        <tr>
+            <td style="text-align:left">USR NAME</td> <td><input name="user_name" type="text" class="input-block-level" placeholder="User Name"></td>
+        </tr>
+        <tr>
+            <td style="text-align:left">PASSWORD</td><td><input name="password" type="password" class="input-block-level" placeholder="Password"></td>
+        </tr>
+        <tr>
+            <td style="text-align:left">CONFIRM</td> <td><input type="password" class="input-block-level" placeholder="Password Confirmation"></td>
+        </tr>
+        <tr>
+            <td style="text-align:left">PHONE NUM</td><td><input name="phone" type="text" class="input-block-level" placeholder="Phone"></td>
+        </tr>
+        <tr>
+            <td style="text-align:left">EMAIL ADDR</td><td><input name="email" type="text" class="input-block-level" placeholder="Email address"></td>
+        </tr>
+    </table>
+        <button class="btn btn-large btn-primary" type="submit">submit</button>
+    </div>
+    <input name="action" value="register" type="hidden">
+</form>
+<script src="twitter-bootstrap-v2/docs/assets/js/jquery.js"></script>
+<script>
+    $(function(){
+        $(".form-signin").submit(
+                function(){
+                    if($("input[type=text]").val().length==0){
+                        alert("Invalid Input");
+                        return false;
+                    }
+                    return true;
+                }
+        );
+    });
+</script>
+
+</body>
+</html>
